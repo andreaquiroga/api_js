@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //fetch is the new async call
+        /*
+        function loadJson(){
+            fetch('https://api.covid19tracking.narrativa.com/api/2020-03-22/country/spain')
+            .then(response => response.json())
+            .then(showJson);
+        }
+
+        function showJson(json){
+            console.log(json);
+        }
+
+        loadJson();
+        */
+
+        //simulation of a fetch
+        /*
+        let newPromise = new Promise(resolve => {
+            setTimeout(() => {
+                    let json = {
+                    name: 'test',
+                    number: '2',
+                    id: 1
+                }
+                resolve(json);
+            }, 5000);
+        });
+
+        newPromise.then((result) => {
+            console.log(result);
+        });
+        */
+
+        //async and await funtion
+        
+        async function getAPI(url){
+            let result = await fetch(url);
+            return  result.json();
+        }
+
+        async function loadJson(){
+            let json = await getAPI('https://api.covid19tracking.narrativa.com/api/2020-03-22/country/bolivia');
+            console.log(json);
+            let json2 = await getAPI('https://api.covid19tracking.narrativa.com/api/2020-03-22/country/spain');
+            console.log(json2);
+        }
+
+        loadJson();
+
+        
+        
+    </script>
+</body>
+</html>
