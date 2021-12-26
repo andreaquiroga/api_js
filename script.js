@@ -1,6 +1,5 @@
-const api_url = "https://api.covid19tracking.narrativa.com/api/";
-
 window.onload = start();
+
 function start(){
     let btnLoad =  document.getElementById('btnLoad');
     btnLoad.addEventListener('click', clickButton);
