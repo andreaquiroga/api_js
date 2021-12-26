@@ -10,14 +10,18 @@
 <body>
     <div>
         <h1>COVID19</h1>
-        <b>Date:</b> <input id="inputDate" type="date"/><br/>
+        <b>Date:</b> <input id="inputDate" type="date" required/><br/>
         <b>Country:</b>
         <select id="selectCountry">
-            <option value="bolivia">Bolivia</option>
-            <option value="croatia">Croatia</option>
-            <option value="spain">Spain</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Spain">Spain</option>
         </select><br/>
-        <button id="btnLoad">Load</button>
+        <button id="btnLoad">Load Data</button><br />
+        Confirmed today: <span id="todayConfirmed"></span><br />
+        Deaths today: <span id="todayDeaths"></span><br />
+        Confirmed yesterday: <span id="yesterdayConfirmed"></span><br />
+        Yesterday deaths: <span id="yesterdayDeaths"></span><br />
     </div>
     <script src="script.js"></script>
 </body>
