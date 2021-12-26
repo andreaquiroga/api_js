@@ -16,7 +16,6 @@ async function clickButton(){
     let date = document.getElementById('inputDate').value;
     let url = makeUrl(country, date);
     let json = await loadUrl(url);
-    console.log(json);
     fillData(json, date, country);
 }
 
@@ -28,5 +27,5 @@ function fillData(json, date, country){
 }
 
 function makeUrl(country, date){
-    return api_url + date + "/country/" + country;
+    return `https://api.covid19tracking.narrativa.com/api/${date}/country/${country}`;
 }
